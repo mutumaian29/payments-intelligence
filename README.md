@@ -160,7 +160,16 @@ Focus areas: Payments analytics, fraud monitoring, reconciliation, risk analysis
 1. Clone the repository  
 2. Open the notebook in Jupyter or Google Colab  
 3. Install required Python packages (`pandas`, `matplotlib`, `seaborn`)  
-4. Run all cells top to bottom  
+4. Run all cells top to bottom
+
+## 🗂 Dataset
+
+- **Primary source (versioned):** `igaming_payments_20k.csv`
+- **Live inspection view (read-only):**  
+  👉 [Google Sheets – Transaction Dataset (https://docs.google.com/spreadsheets/d/1UayaGCyMndqBl9BxQuy2Yniw_sQHZqNIfcm9oEYhUKk/edit?usp=sharing)
+
+> The Google Sheet is provided for exploratory inspection only.  
+> All analysis in this repository is based on the versioned CSV file.
 
 ---
 

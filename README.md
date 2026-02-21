@@ -30,7 +30,7 @@ The project answers four core business questions:
 
 ---
 
-## 🗂 Dataset
+##  Dataset
 - **Size:** 20,000 transaction attempts  
 - **Type:** Simulated but realistic iGaming payments data  
 - **Granularity:** Transaction-level  
@@ -63,7 +63,7 @@ The project answers four core business questions:
 
 ---
 
-## 🧱 Project Structure
+##  Project Structure
 
 ### 1️⃣ Data Cleaning & Validation
 - Removed invalid transactions (negative amounts, missing providers, invalid statuses)
@@ -129,7 +129,7 @@ All charts are designed to be **executive-readable** and portfolio-ready.
 
 ---
 
-## 🚧 Limitations
+##  Limitations
 - Dataset is simulated (no real chargeback confirmations)
 - No machine learning fraud scoring applied
 - Time-based analysis limited by dataset scope
@@ -138,7 +138,7 @@ These limitations were intentional to focus on **core payments analytics fundame
 
 ---
 
-## 🚀 Next Steps
+##  Next Steps
 - Extend analysis to **reconciliation workflows**
 - Introduce chargeback and dispute data
 - Add alerting logic for real-time monitoring

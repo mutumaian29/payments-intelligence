@@ -1,5 +1,11 @@
 # Project Shield & Scale  
 ### iGaming Fraud Monitoring & Payments Operations Analytics
+## 📊 Key Visual Insights
+
+### Fraud Rate by Payment Provider
+![Fraud Rate by Provider](images/fraud_rate_by_provider.png)
+
+*Providers with both high transaction volume and high fraud rates represent the greatest financial risk and should be prioritized for mitigation.*
 
 ## 📌 Overview
 Project **Shield & Scale** is an end-to-end payments analytics project focused on **fraud detection, transaction monitoring, and operational health** within an iGaming environment.

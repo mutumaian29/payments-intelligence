@@ -1,7 +1,7 @@
 # Project Shield & Scale  
 ### iGaming Fraud Monitoring & Payments Operations Analytics
 <p align="center">
-  <img src="shiled_and_scale_images/suucess_by_provider.png" width="800">
+  <img src="Fraud detection in iGaming analytics_background.png" width="800">
 </p>
 
 ## 📌 Overview

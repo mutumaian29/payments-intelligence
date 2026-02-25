@@ -13,7 +13,7 @@ The analysis is designed to mirror **real-world payments monitoring workflows** 
 
 ---
 
-## 🎯 Business Objectives
+##  Business Objectives
 The project answers four core business questions:
 
 1. **Fraud Risk**
@@ -55,7 +55,7 @@ The project answers four core business questions:
 
 ---
 
-## 🛠 Tools & Technologies
+## Tools & Technologies
 - **SQL (SQLite)** – data filtering, aggregation, KPI calculations  
 - **Python**
   - Pandas – data manipulation & analytics
@@ -68,14 +68,14 @@ The project answers four core business questions:
 
 ##  Project Structure
 
-### 1️⃣ Data Cleaning & Validation
+### 1. Data Cleaning & Validation
 - Removed invalid transactions (negative amounts, missing providers, invalid statuses)
 - Validated data quality using Python assertions
 - Ensured clean dataset for downstream analysis
 
 ---
 
-### 2️⃣ Workstream 1: Fraud & High-Risk Deep Dive
+### 2️. Workstream 1: Fraud & High-Risk Deep Dive
 **Key Analyses**
 - Fraud rate by provider and country
 - Transaction value analysis (low-value testing vs high-value attacks)
@@ -86,7 +86,7 @@ The project answers four core business questions:
 
 ---
 
-### 3️⃣ Workstream 2: Entity Intelligence & Multi-Accounting
+### 3️. Workstream 2: Entity Intelligence & Multi-Accounting
 **Key Analyses**
 - Device IDs linked to multiple user accounts
 - IP addresses reused across users
@@ -99,7 +99,7 @@ The project answers four core business questions:
 
 ---
 
-### 4️⃣ Workstream 3: Operational Health & Revenue Recovery
+### 4️. Workstream 3: Operational Health & Revenue Recovery
 **Key Analyses**
 - Breakdown of technical failures (timeouts, provider errors)
 - Provider performance by time-of-day
@@ -111,7 +111,7 @@ The project answers four core business questions:
 
 ---
 
-## 📊 Visualizations
+## Visualizations
 The notebook includes:
 - Fraud rate by provider (bar charts)
 - Transaction volume by provider
@@ -123,7 +123,7 @@ All charts are designed to be **executive-readable** and portfolio-ready.
 
 ---
 
-## 📈 Key Insights (Executive Summary)
+## Key Insights (Executive Summary)
 - A small number of providers account for a disproportionate share of fraud risk
 - Multi-accounting via shared devices represents a significant vulnerability
 - A non-trivial portion of “successful” revenue originates from previously flagged hardware
@@ -149,7 +149,7 @@ These limitations were intentional to focus on **core payments analytics fundame
 
 ---
 
-## 👤 Author
+## Author
 **Ian Mutuma**  
 Payments Operations Specialist  
 Focus areas: Payments analytics, fraud monitoring, reconciliation, risk analysis  
@@ -162,11 +162,11 @@ Focus areas: Payments analytics, fraud monitoring, reconciliation, risk analysis
 3. Install required Python packages (`pandas`, `matplotlib`, `seaborn`)  
 4. Run all cells top to bottom
 
-## 🗂 Dataset
+## Dataset
 
 - **Primary source (versioned):** `igaming_payments_20k.csv`
 - **Live inspection view (read-only):**  
-  👉 [Google Sheets – Transaction Dataset (https://docs.google.com/spreadsheets/d/1UayaGCyMndqBl9BxQuy2Yniw_sQHZqNIfcm9oEYhUKk/edit?usp=sharing)
+   [Google Sheets – Transaction Dataset (https://docs.google.com/spreadsheets/d/1UayaGCyMndqBl9BxQuy2Yniw_sQHZqNIfcm9oEYhUKk/edit?usp=sharing)
 
 > The Google Sheet is provided for exploratory inspection only.  
 > All analysis in this repository is based on the versioned CSV file.

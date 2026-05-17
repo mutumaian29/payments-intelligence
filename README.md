@@ -45,7 +45,7 @@ The analysis covers **four analytical workstreams** that mirror real fraud and p
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 igaming_payments_20k.csv  (20,000 transactions)
@@ -169,7 +169,7 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ---
 
-## 🗂️ Repository Structure
+##  Repository Structure
 
 ```
 payments-intelligence/
@@ -188,7 +188,7 @@ payments-intelligence/
 
 ---
 
-## 🧰 Tech Stack
+##  Tech Stack
 
 | Tool | Purpose |
 |------|---------|

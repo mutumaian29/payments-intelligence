@@ -93,10 +93,8 @@ igaming_payments_20k.csv  (20,000 transactions)
 ![Entity Intelligence](shiled_and_scale_images/multi_accounting_clusters.png)
 
 ### Provider Performance Benchmarking
-![Provider Performance](./shield_and_scale_images/provider_performance.png)
+![Provider Performance](shiled_and_scale_images/suucess_by_provider.png)
 
-### Revenue Recovery Analysis
-![Revenue Recovery](./shield_and_scale_images/revenue_recovery.png)
 
 > *All visualisations are generated inside the notebook and designed to be executive-readable.*
 

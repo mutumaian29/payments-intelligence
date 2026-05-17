@@ -87,7 +87,7 @@ igaming_payments_20k.csv  (20,000 transactions)
 ## 📊 Dashboard Preview
 
 ### Fraud Detection Overview
-![Fraud Detection Dashboard](./shield_and_scale_images/fraud_detection_overview.png)
+![Fraud Detection Dashboard](shiled_and_scale_images/Fraudrate_by_channel.png)
 
 ### Entity Intelligence — Multi-Accounting Detection
 ![Entity Intelligence](./shield_and_scale_images/entity_intelligence.png)

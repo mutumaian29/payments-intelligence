@@ -21,11 +21,11 @@
 
 ## 📌 What This Project Does
 
-Project Shield & Scale is a **portfolio project using simulated payments data** built to answer the questions a real payments operations team faces daily:
+I developed Project Shield & Scale to explore the types of problems I encounter in payments operations. I used **simulated payments data** to investigate three questions:
 
 > *"Which providers show elevated fraud-suspected rates? Which device-linked patterns warrant review? Where are technical failures concentrated?"*
 
-The analysis covers **four analytical workstreams** that mirror real fraud and payments ops workflows used in fintech and iGaming operators.
+I organised the analysis into **four workstreams**, covering fraud risk, shared devices, payment performance and recommendations.
 
 ---
 
@@ -90,41 +90,39 @@ igaming_payments_20k.csv  (20,000 transactions)
 ### Fraud-suspected flags by channel
 ![Fraud Detection Dashboard](shiled_and_scale_images/Fraudrate_by_channel.png)
 
-### Entity Intelligence — Multi-Accounting Detection
+### Entity Intelligence: Multi-Accounting Detection
 ![Entity Intelligence](shiled_and_scale_images/multi_accounting_clusters.png)
 
 ### Provider Performance Benchmarking
 ![Provider Performance](shiled_and_scale_images/suucess_by_provider.png)
 
 
-> *All visualisations are generated inside the notebook and designed to be executive-readable.*
+> *I created these visualisations in the notebook to make the findings easier to understand.*
 
 ---
 
 ## 🔬 Analytical Workstreams
 
-### Workstream 1 — Fraud Risk Deep Dive 🚨
+### Workstream 1: Fraud Risk Deep Dive 🚨
 
 **Question:** Which providers, countries, and channels pose the highest fraud risk?
 
-**Methods:**
-- Fraud rate calculation by provider, country, and channel
-- Transaction value distribution analysis (low-value card testing vs high-value attacks)
-- High-risk corridor mapping (Country × Provider pairs)
-- Fraud concentration vs volume analysis
+**My approach:**
+- Compared suspected fraud rates by provider and channel.
+- Examined the distribution of transaction values.
+- Compared the concentration of fraud flags against transaction volumes.
 
 **Outputs:**
 - Ranked provider fraud risk table
-- High-risk corridor heatmap
 - Fraud rate benchmarks per channel
 
 ---
 
-### Workstream 2 — Entity Intelligence & Multi-Accounting 🔗
+### Workstream 2: Entity Intelligence & Multi-Accounting 🔗
 
 **Question:** Which shared-device patterns warrant further investigation?
 
-**Methods:**
+**My approach:**
 - Device ID → User ID mapping (many-to-many relationship analysis)
 - Shared-device grouping across user accounts
 - Overlap between devices with successful and fraud-suspected attempts (not a chronological test)
@@ -137,11 +135,11 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ---
 
-### Workstream 3 — Operational Health & Payment Failures 💰
+### Workstream 3: Operational Health & Payment Failures 💰
 
 **Question:** Which failure categories contribute most to payment friction?
 
-**Methods:**
+**My approach:**
 - Failure reason breakdown (timeout vs provider error vs user error)
 - Technical failure counts by provider and hour
 - Currency success rate comparison across corridors
@@ -153,11 +151,11 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ---
 
-### Workstream 4 — Decision Support Intelligence 🎯
+### Workstream 4: Decision Support Intelligence 🎯
 
 **Question:** Which operational and risk issues should be investigated first?
 
-**Methods:**
+**My approach:**
 - Comparative impact analysis across providers, channels, and corridors
 - Interpretation of provider and currency performance
 - Prioritisation of technical failure investigations and device reviews
@@ -204,7 +202,7 @@ payments-intelligence/
 
 ## 🚀 How to Run
 
-### Option A — Google Colab
+### Option A: Google Colab
 
 1. Open the [notebook on GitHub](./Fraud_and_Monitoring%28Project_Shield_and_Scale%29.ipynb) and download it.
 2. Upload it to Google Colab.
@@ -212,7 +210,7 @@ payments-intelligence/
 
 The saved notebook outputs can be reviewed on GitHub without running the code.
 
-### Option B — Local (requires ingestion changes)
+### Option B: Local (requires ingestion changes)
 
 Adapt the Colab-specific Drive and Sheets setup to load the included CSV into SQLite before running locally.
 
@@ -238,7 +236,7 @@ jupyter notebook "Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb"
 | **Rows** | 20,000 transaction attempts |
 | **Domain** | iGaming payments |
 | **Granularity** | Transaction-level |
-| **PII** | Synthetic data for portfolio analysis |
+| **Data source** | Synthetic data for portfolio analysis |
 
 **Key columns:**
 
@@ -261,20 +259,17 @@ jupyter notebook "Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb"
 
 ## 💡 Why This Project Exists
 
-This project was built to demonstrate payments operations and fraud intelligence skills in a realistic, domain-specific context — not as a generic data science exercise.
+I wanted to apply my experience in payments operations to a practical analytics project. Rather than simply counting failed transactions or suspicious activity, I wanted to understand what the results could mean for an operations team.
 
-Every analytical decision mirrors what a real **fraud analyst**, **payments operations specialist**, or **risk analytics team** would prioritise:
-
-- Focus on **business impact** (revenue exposure, not just anomaly counts)
-- Think in **operational workflows** (provider routing, corridor management)
-- Frame findings as **decisions** (which provider to disable, which accounts to flag)
-- Build for **executive audiences** (visual clarity, plain-English summaries)
+My focus was on identifying issues worth investigating, comparing payment performance and communicating findings clearly. I also wanted to distinguish potential risk indicators from confirmed fraud.
 
 ---
 
 ## Analytical limitations
 
-Shared devices and fraud-suspected labels are screening indicators, not evidence of confirmed fraud. Hourly failure counts require attempt-volume denominators before comparing reliability. Failed transaction values are not lost revenue or guaranteed recovery. The initial cash-flow query needs correction: filter successful transactions and subtract withdrawals from deposits, not from total volume. Its reported cash-flow figures should not be relied on until corrected.
+Shared devices and suspected fraud labels are indicators for review, not proof of fraud. I would compare hourly failure rates against total attempts before drawing conclusions about provider reliability. Failed transaction values do not represent guaranteed revenue recovery.
+
+One area I still need to correct is the initial cash flow query. It should include only successful transactions and subtract withdrawals from deposits. The existing cash flow figures should not be used until that calculation is corrected.
 
 ---
 
@@ -294,7 +289,7 @@ Shared devices and fraud-suspected labels are screening indicators, not evidence
 
 ## 👤 Author
 
-**Ian Mutuma** — Payments Operations Specialist | iGaming & Fintech
+**Ian Mutuma**: Payments Operations Specialist | iGaming & Fintech
 
 - 📧 mutumaian29@gmail.com
 - 🐙 [GitHub](https://github.com/mutumaian29)

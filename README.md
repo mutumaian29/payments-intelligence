@@ -8,12 +8,12 @@
 ![Pandas](https://img.shields.io/badge/Pandas-2.0-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
 ![Domain](https://img.shields.io/badge/Domain-Payments%20%7C%20Fraud%20%7C%20iGaming-16A34A?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Portfolio-success?style=for-the-badge)
 
-**End-to-end payments intelligence pipeline on 20,000 iGaming transactions**  
-*Fraud detection · Entity linking · Revenue recovery modelling · Provider benchmarking*
+**Payments operations and risk analysis on 20,000 simulated iGaming transaction attempts**  
+*Fraud risk screening · Entity analysis · Operational performance · Provider benchmarking*
 
-[📓 Open Notebook](./Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb) · [📊 View Dataset](./igaming_payments_20k.csv) · [🔗 Live Data View](https://docs.google.com/spreadsheets/d/1UayaGCyMndqBl9BxQuy2Yniw_sQHZqNIfcm9oEYhUKk/edit?usp=sharing)
+[📓 Open Notebook](./Fraud_and_Monitoring%28Project_Shield_and_Scale%29.ipynb) · [📊 View Dataset](./igaming_payments_20k.csv)
 
 </div>
 
@@ -21,9 +21,9 @@
 
 ## 📌 What This Project Does
 
-Project Shield & Scale is a **production-style fraud and payments intelligence pipeline** built to answer the questions a real payments operations team faces daily:
+Project Shield & Scale is a **portfolio project using simulated payments data** built to answer the questions a real payments operations team faces daily:
 
-> *"Which providers are generating the most fraud exposure? Are we processing revenue from compromised accounts? How much money are we losing to technical failures — and where?"*
+> *"Which providers show elevated fraud-suspected rates? Which device-linked patterns warrant review? Where are technical failures concentrated?"*
 
 The analysis covers **four analytical workstreams** that mirror real fraud and payments ops workflows used in fintech and iGaming operators.
 
@@ -34,14 +34,15 @@ The analysis covers **four analytical workstreams** that mirror real fraud and p
 | Finding | Value |
 |---------|-------|
 | Transactions analysed | **20,000** |
-| Fraud-suspected transactions identified | See notebook |
-| Revenue flowing through flagged devices | Quantified per provider |
-| Multi-accounting clusters detected | Entity-linked via device ID + IP |
-| Revenue leakage from technical failures | Broken down by failure reason |
-| Providers benchmarked | By success rate, corridor, time-of-day |
-| High-risk corridors identified | Country × Provider combinations |
+| Successful attempts | **17,477 (87.39%)** |
+| Fraud-suspected attempts | **653** |
+| Provider errors | **637** |
+| Timeouts | **637** |
+| Insufficient funds | **596** |
+| Devices linked to more than three users | **13** |
+| Users exceeding five attempts in a rolling hour | **0** |
 
-> Full quantified findings are inside the notebook with executive-ready charts.
+> Figures are based on saved notebook outputs, not a new execution. These are simulated results, not actual provider performance or confirmed fraud.
 
 ---
 
@@ -65,7 +66,7 @@ igaming_payments_20k.csv  (20,000 transactions)
 │               │    │                     │
 │ Aggregations  │    │ Entity linking      │
 │ KPI queries   │    │ Velocity analysis   │
-│ Corridor maps │    │ ML anomaly scoring  │
+│ Market totals │    │ Failure analysis    │
 └───────┬───────┘    └──────────┬──────────┘
         └──────────┬────────────┘
                    ▼
@@ -86,7 +87,7 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ## 📊 Dashboard Preview
 
-### Fraud Detection Overview
+### Fraud-suspected flags by channel
 ![Fraud Detection Dashboard](shiled_and_scale_images/Fraudrate_by_channel.png)
 
 ### Entity Intelligence — Multi-Accounting Detection
@@ -121,50 +122,49 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ### Workstream 2 — Entity Intelligence & Multi-Accounting 🔗
 
-**Question:** Are fraudsters operating multiple accounts linked through shared infrastructure?
+**Question:** Which shared-device patterns warrant further investigation?
 
 **Methods:**
 - Device ID → User ID mapping (many-to-many relationship analysis)
-- IP address reuse detection across user accounts
-- Success-after-failure audit: revenue from users who previously had fraud-suspected transactions
+- Shared-device grouping across user accounts
+- Overlap between devices with successful and fraud-suspected attempts (not a chronological test)
 - Velocity burst detection: abnormal transaction frequency clustering
 
 **Outputs:**
 - Multi-accounting cluster map
-- Quantified revenue at risk from flagged device hardware
+- Device overlap for further manual review
 - Velocity anomaly flags per user/device group
 
 ---
 
-### Workstream 3 — Operational Health & Revenue Recovery 💰
+### Workstream 3 — Operational Health & Payment Failures 💰
 
-**Question:** How much revenue is lost to technical failures, and where?
+**Question:** Which failure categories contribute most to payment friction?
 
 **Methods:**
 - Failure reason breakdown (timeout vs provider error vs user error)
-- Provider performance by time-of-day (peak vs off-peak degradation)
+- Technical failure counts by provider and hour
 - Currency success rate comparison across corridors
-- Net recovery scenario modelling by provider
 
 **Outputs:**
-- Revenue leakage quantification by failure category
-- Provider disable/enable ROI model
+- Failure counts by category
+- Payment conversion funnel
 - Currency corridor performance ranking
 
 ---
 
 ### Workstream 4 — Decision Support Intelligence 🎯
 
-**Question:** If we had to act today, which single change would save the most money?
+**Question:** Which operational and risk issues should be investigated first?
 
 **Methods:**
 - Comparative impact analysis across providers, channels, and corridors
-- Risk-adjusted revenue ranking (revenue × fraud rate)
-- Provider substitution scenario modelling
+- Interpretation of provider and currency performance
+- Prioritisation of technical failure investigations and device reviews
 
 **Outputs:**
-- Ranked action recommendations with estimated financial impact
-- Provider risk-adjusted revenue scorecard
+- Suggested operational and risk actions
+- Limitations and follow-up investigation priorities
 - Executive decision brief
 
 ---
@@ -173,17 +173,18 @@ igaming_payments_20k.csv  (20,000 transactions)
 
 ```
 payments-intelligence/
-│
-├── Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb  ← Main analysis
-├── igaming_payments_20k.csv                               ← Dataset (20K rows)
-├── README.md                                              ← This file
-├── requirements.txt                                       ← Python dependencies
-│
-└── shield_and_scale_images/                               ← Dashboard exports
-    ├── fraud_detection_overview.png
-    ├── entity_intelligence.png
-    ├── provider_performance.png
-    └── revenue_recovery.png
+├── Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb
+├── igaming_payments_20k.csv
+├── README.md
+├── requirements.txt
+├── Fraud detection in iGaming analytics_background.png
+└── shiled_and_scale_images/
+    ├── FraudRate_distribution.png
+    ├── Fraudrate_by_channel.png
+    ├── failures_by_hour.png
+    ├── multi_accounting_clusters.png
+    ├── suucess_by_provider.png
+    └── title.jpg
 ```
 
 ---
@@ -203,13 +204,17 @@ payments-intelligence/
 
 ## 🚀 How to Run
 
-### Option A — Google Colab (recommended, no install)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/mutumaian29/payments-intelligence/blob/main/Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb)
+### Option A — Google Colab
 
-1. Click the badge above
-2. Runtime → Run all
+1. Open the [notebook on GitHub](./Fraud_and_Monitoring%28Project_Shield_and_Scale%29.ipynb) and download it.
+2. Upload it to Google Colab.
+3. Adjust the Google Drive database path and Google Sheets authentication/access in the setup cells before running. The included CSV can be used to adapt ingestion.
 
-### Option B — Local
+The saved notebook outputs can be reviewed on GitHub without running the code.
+
+### Option B — Local (requires ingestion changes)
+
+Adapt the Colab-specific Drive and Sheets setup to load the included CSV into SQLite before running locally.
 
 ```bash
 # Clone the repository
@@ -233,24 +238,24 @@ jupyter notebook "Fraud_and_Monitoring(Project_Shield_and_Scale).ipynb"
 | **Rows** | 20,000 transaction attempts |
 | **Domain** | iGaming payments |
 | **Granularity** | Transaction-level |
-| **PII** | None — fully anonymised |
+| **PII** | Synthetic data for portfolio analysis |
 
 **Key columns:**
 
 | Column | Description |
 |--------|-------------|
 | `transaction_id` | Unique transaction reference |
-| `user_id` | Anonymised user identifier |
+| `user_id` | Simulated user identifier |
 | `device_id` | Device fingerprint (for entity linking) |
 | `ip_address` | IP address (for entity linking) |
 | `provider` | Payment provider name |
 | `currency` | Transaction currency |
 | `country` | Transaction origin country |
 | `transaction_type` | Deposit or withdrawal |
-| `status` | `success` / `failed` / `fraud_suspected` |
+| `status` | `success` / `failed` (fraud_suspected is a failure reason) |
 | `failure_reason` | Root cause of failure (timeouts, errors, etc.) |
 | `amount` | Transaction value |
-| `timestamp` | Transaction datetime |
+| `created_at` | Transaction datetime |
 
 ---
 
@@ -264,6 +269,12 @@ Every analytical decision mirrors what a real **fraud analyst**, **payments oper
 - Think in **operational workflows** (provider routing, corridor management)
 - Frame findings as **decisions** (which provider to disable, which accounts to flag)
 - Build for **executive audiences** (visual clarity, plain-English summaries)
+
+---
+
+## Analytical limitations
+
+Shared devices and fraud-suspected labels are screening indicators, not evidence of confirmed fraud. Hourly failure counts require attempt-volume denominators before comparing reliability. Failed transaction values are not lost revenue or guaranteed recovery. The initial cash-flow query needs correction: filter successful transactions and subtract withdrawals from deposits, not from total volume. Its reported cash-flow figures should not be relied on until corrected.
 
 ---
 
@@ -285,8 +296,7 @@ Every analytical decision mirrors what a real **fraud analyst**, **payments oper
 
 **Ian Mutuma** — Payments Operations Specialist | iGaming & Fintech
 
-- 📧 mutumian29@gmail.com
-- 💼 [LinkedIn](https://linkedin.com/in/ian-mutuma-3639bb280)
+- 📧 mutumaian29@gmail.com
 - 🐙 [GitHub](https://github.com/mutumaian29)
 
 *Focus areas: Payments analytics · Fraud monitoring · Reconciliation · AML · Risk intelligence*
@@ -297,6 +307,6 @@ Every analytical decision mirrors what a real **fraud analyst**, **payments oper
 
 *If this project was useful, a ⭐ is appreciated.*
 
-**[🔝 Back to top](#️-project-shield--scale)**
+
 
 </div>
